@@ -1,0 +1,8 @@
+conf:
+    permission-checker:
+        url: http://ofx-permission-checker:8050/api/v1/permission-checker
+    rabbit:
+        host: rabbitmq
+        port: 5672
+        user: ${RABBIT_USER}
+        pass: ${RABBIT_PASS}
