@@ -14,7 +14,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +26,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
-
+  
+  build_and_push_docker_image:
+    runs-on: ubuntu-latest
+    steps:
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
@@ -38,6 +40,9 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+  deploy_to_vps:
+    runs-on: ubuntu-latest
+    steps:        
     - name: Deploy to VPS
       uses: appleboy/ssh-action@master
       with:
