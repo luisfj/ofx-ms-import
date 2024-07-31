@@ -14,7 +14,7 @@ on:
 
 jobs:
   build:
-    name: Test & Build & Generate Docker Image & Push to Docker-Hub
+    name: Test & Build & Docker Image
     runs-on: ubuntu-latest
 
     steps:
