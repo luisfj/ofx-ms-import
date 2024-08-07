@@ -1,16 +1,18 @@
 server:
     port: 8040
-    servlet:
-        context-path: /api/v1/import
+    # servlet:
+    #     context-path: /api/v1/import
 
 spring:
     profiles:
-        default: dev
-        active: ${SPRING_ACTIVE_PROFILE:default}
+        active: ${SPRING_ACTIVE_PROFILE:dev}
     application:
-        name: ofx-ms-import
+        name: ofx-ms-import        
+    webflux:
+        base-path: /api/v1/import
     servlet:
         multipart:
+            enabled: true
             max-file-size: 2MB
             max-request-size: 2MB
     rabbitmq:
@@ -20,7 +22,7 @@ spring:
         password: ${conf.rabbit.pass}
     main:
         web-application-type: reactive
-    cloud:
+    cloud:            
         openfeign:
             client:
                 config:
