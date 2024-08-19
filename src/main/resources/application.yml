@@ -55,6 +55,11 @@ spring:
                         # queryMapEncoder: com.example.SimpleQueryMapEncoder
                         # micrometer.enabled: false
 
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/
+
 queue:
     name: 
         sse: sse.queue
