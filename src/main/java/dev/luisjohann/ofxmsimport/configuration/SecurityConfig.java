@@ -1,14 +1,22 @@
 package dev.luisjohann.ofxmsimport.configuration;
 
-// @Configuration
-// @EnableWebSecurity
-public class SecurityConfig {
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 
-    // @Bean
-    // public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    // http.authorizeHttpRequests(authorize ->
-    // authorize.anyRequest().authenticated())
-    // .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()));
-    // return http.build();
-    // }
+@Configuration
+@EnableWebFluxSecurity
+public class SecurityConfig {
+//    @Bean
+//    public SecurityFilterChain securityWebFilterChain(HttpSecurity httpSecurity) throws Exception {
+//
+//        var http = httpSecurity
+//                .csrf(CsrfConfigurer::disable)
+//                .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
+//                        .anyRequest().authenticated())
+//                .oauth2ResourceServer((oauth) -> oauth
+//                        .jwt(Customizer.withDefaults()));
+//
+//        return http.build();
+//    }
+
 }
