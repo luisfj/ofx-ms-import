@@ -53,4 +53,4 @@ jobs:
         key: ${{ secrets.VPS_SSH_KEY }}
         port: ${{ secrets.VPS_PORT }}
         script: |
-          cd /srv;docker stop ofx-ms-import;docker rm ofx-ms-import;docker rmi luisfj/ofx-ms-import;docker pull luisfj/ofx-ms-import:latest;docker run -d -m 300m --env-file ./deploy/env.list --network prodnet --name ofx-ms-import --restart on-failure[5] luisfj/ofx-ms-import
+          cd /srv;docker stop ofx-ms-import;docker rm ofx-ms-import;docker rmi luisfj/ofx-ms-import;docker pull luisfj/ofx-ms-import:latest;docker run -d -m 300m --env-file ./deploy/env.list --network prodnet --name ofx-ms-import --restart on-failure:5 luisfj/ofx-ms-import
