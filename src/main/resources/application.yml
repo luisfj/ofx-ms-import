@@ -1,5 +1,6 @@
 server:
     port: 8040
+    max-http-header-size: 64kb
     # servlet:
     #     context-path: /api/v1/import
 
